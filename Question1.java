@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class Q1 {
@@ -45,8 +44,7 @@ public class Q1 {
 
             // 大写算法 (Uppercase letters)
             else if (c >= 'A' && c <= 'Z') {
-                if (c == 'A' || c == 'E' || c == 'I'
-                        || c == 'O' || c == 'U') {
+                if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
                     encoded += "*" + Character.toLowerCase(c);
                 }
 
@@ -66,6 +64,16 @@ public class Q1 {
             else if (c >= '0' && c <= '9') {
                 encoded += (int)((c - '0') * (c - '0')) % 10;
             }
+
+            // 空格（Spaces）
+            else if (c == ' '){
+                encoded += '.';
+            }
+
+            // 字符（Symbols）
+            else if (c == '!' || c == '@' || c == '#' || c == '$' || c == '%'){
+                String symbols = "!@#$%";
+                
         }
 
         System.out.println("Encoded Letters: " + encoded);
