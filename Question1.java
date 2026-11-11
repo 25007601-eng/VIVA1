@@ -72,28 +72,30 @@ public class Q1 {
             }
 
             // 字符（Symbols）
-            String symbols = "!@#$%";
-            int index = symbols.indexOf(c);
+            else{
+                String symbols = "!@#$%";
+                int index = symbols.indexOf(c);
 
-            if (index != -1){
-                 int newIndex = (index + 2) % 5;
-                encoded += symbols.charAt(newIndex);
-              }
+                if (index != -1){
+                    int newIndex = (index + 2) % 5;
+                    encoded += symbols.charAt(newIndex);
+                }
              else{
                 encoded += c;
              }
+            }
+        }
 
             // 反转（Reverse）
-            String whole = "";
-            for (int i = 0; i < encoded.length(); i++){
-                char c = encoded.charAt((encoded.length() - i));
-                whole += c;
-            }
+        String whole = "";
+        for (int i = 0; i < encoded.length(); i++){
+            char c = encoded.charAt((encoded.length() - 1 - i));
+            whole += c;
         }
         
 
-        System.out.println("Encoded Letters: " + encoded);
-        System.out.println("Whole encoded string: " + whole);
+        System.out.println("Before Reversal: " + encoded);
+        System.out.println("Encoded Password: " + whole);
 
         input.close();
     }
