@@ -26,6 +26,7 @@ public class Q1 {
 
         System.out.println("Shift Key: " + key);
 
+        // Second Pass
         // 小写算法 (Lowercase letters)
         String encoded = "";
 
@@ -71,13 +72,30 @@ public class Q1 {
             }
 
             // 字符（Symbols）
-            else if (c == '!' || c == '@' || c == '#' || c == '$' || c == '%'){
-                String symbols = "!@#$%";
-                
+            String symbols = "!@#$%";
+            int index = symbols.indexOf(c);
+
+            if (index != -1){
+                 int newIndex = (index + 2) % 5;
+                encoded += symbols.charAt(newIndex);
+              }
+             else{
+                encoded += c;
+             }
+
+            // 反转（Reverse）
+            String whole = "";
+            for (int i = 0; i < phrase; i++){
+                char c = phrase.charAt((int)(phrase - i));
+                whole += c;
+            }
         }
+        
 
         System.out.println("Encoded Letters: " + encoded);
+        System.out.println("Whole encoded string: " + whole);
 
         input.close();
     }
 }
+
