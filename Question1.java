@@ -85,8 +85,8 @@ public class Q1 {
 
             // 反转（Reverse）
             String whole = "";
-            for (int i = 0; i < phrase; i++){
-                char c = phrase.charAt((int)(phrase - i));
+            for (int i = 0; i < encoded.length(); i++){
+                char c = encoded.charAt((encoded.length() - i));
                 whole += c;
             }
         }
