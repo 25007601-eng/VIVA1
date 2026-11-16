@@ -14,13 +14,14 @@ public class Question2 {
         System.out.println("Error: Balance must be between RM 500 and RM 50000.");
       }
       
-    }while(balance < 500 || balance > 50000){
-      System.out.println("Balance: RM " + balance);
-    }
+    }while(balance < 500 || balance > 50000)；
+      System.out.print("Balance: RM " + balance);
 
-    double balance = 8000;
-    double annualRate = 18;
-    double plannedPayment = 300;
+    System.out.print("Enter annual interest rate (%): ");
+    double annualRate = input.nextDouble();
+
+    System.out.print("Enter planned monthly payment (RM): ");
+    double plannedPayment = input.nextDouble();
 
     double totalInterst = 0;
     double totalPaid = 0;
@@ -28,7 +29,7 @@ public class Question2 {
     
     double monthlyRate = annualRate / (100 * 12);
     
-    double interst = balance * monthlyRate;
+    double interest = balance * monthlyRate;
     
     balance += interest;
     totalInterest += interest;
@@ -38,9 +39,17 @@ public class Question2 {
     double actualPayment = plannedPayment;
 
     if(actualPayment < minimumPayment){
-      actualPayment = minmumPayment;
+      actualPayment = minimumPayment;
       raisedMonths ++;
     }
-    
+
+    if(actualPayment > balance){
+      actualPayment = balance;
+    }
+
+    balance -= actualPayment;
+    totalPaid += actualPayment;
+  }
+}
         
     
